@@ -265,7 +265,7 @@ function pauseMusic(){
 audio.addEventListener("error",()=>{
   audioFailed = true;
   musicBtn.classList.add("music-disabled");
-  musicBtn.title = "No se encontró ./assets/musica.mp3";
+  musicBtn.title = "No se encontró ./musica.mp3";
 });
 
 musicBtn.addEventListener("click", async ()=>{
@@ -274,9 +274,11 @@ musicBtn.addEventListener("click", async ()=>{
   else pauseMusic();
 });
 
-$("#openBtn").addEventListener("click", async ()=>{
-  await startMusic();
+$("#openBtn").addEventListener("click", ()=>{
+  // La experiencia nunca depende de que el audio cargue.
+  // Primero avanzamos la página y luego intentamos reproducir la música.
   showScene("reveal");
+  startMusic();
 });
 $("#continueBtn").addEventListener("click", ()=>{
   placeGarden();

@@ -1,3 +1,25 @@
+# kate
+
+Este proyecto está preparado para que TODO quede directamente en la raíz del repositorio.
+
+## Estructura correcta en GitHub
+
+```text
+index.html
+styles.css
+script.js
+musica.mp3
+README.md
+```
+
+La música se busca en:
+
+```text
+./musica.mp3
+```
+
+Importante: aunque el MP3 falte o falle, el botón **Abrir detalle** seguirá funcionando. La página ya no espera a que la música cargue para avanzar.
+
 # Flores para Kate
 
 Proyecto listo para un repositorio independiente.
@@ -21,3 +43,4 @@ La música comienza al pulsar **Abrir detalle** y usa:
 ```
 
 Si quieres cambiar la canción, reemplaza ese archivo conservando el mismo nombre.
+
