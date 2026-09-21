@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0810" />
+  <title>Flores para Kate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="skyCanvas"></canvas>
+
+  <main id="app">
+    <section id="intro" class="scene active">
+      <div class="aurora"></div>
+      <div class="card hero-card glass">
+        <p class="eyebrow">flores amarillas</p>
+        <h1 id="introTitle">Tengo algo para ti</h1>
+        <p id="introSubtitle" class="subtitle"></p>
+        <button id="openBtn" class="btn btn-primary">Abrir detalle</button>
+      </div>
+    </section>
+
+    <section id="reveal" class="scene">
+      <div class="section-inner">
+        <div class="copy-block">
+          <p class="eyebrow">para</p>
+          <h2 id="nameTitle"></h2>
+          <p id="tagline" class="subtitle"></p>
+        </div>
+
+        <div class="bouquet-shell">
+          <div id="heroBouquet" class="hero-bouquet"></div>
+          <div class="floor-glow"></div>
+        </div>
+
+        <button id="continueBtn" class="btn btn-secondary">Descubrir mensajes</button>
+      </div>
+    </section>
+
+    <section id="garden" class="scene">
+      <div class="section-inner garden-wrap">
+        <div class="copy-block compact">
+          <p class="eyebrow">toca las flores</p>
+          <h2>Hay palabras guardadas aquí</h2>
+          <p class="subtitle" id="gardenHint"></p>
+        </div>
+
+        <div id="gardenField" class="garden-field" aria-label="Jardín interactivo"></div>
+
+        <button id="finalBtn" class="btn btn-secondary bottom-btn">Ver mensaje final</button>
+      </div>
+    </section>
+
+    <section id="finale" class="scene">
+      <div class="final-light"></div>
+      <div class="card final-card glass">
+        <div id="finalBouquet" class="final-bouquet"></div>
+        <p class="eyebrow">para <span id="finalFor"></span></p>
+        <h2 id="finalTitle"></h2>
+        <p id="finalMessage" class="poem-text"></p>
+        <p id="signature" class="signature"></p>
+        <div class="actions">
+          <button id="restartBtn" class="btn btn-ghost">Volver a verlo</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="messageModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card glass">
+      <button id="closeModal" class="close-btn" aria-label="Cerrar">×</button>
+      <div class="modal-flower" id="modalFlower"></div>
+      <p id="modalBadge" class="pill">Mensaje</p>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText" class="poem-text"></p>
+    </div>
+  </div>
+
+  <button id="musicBtn" class="music-btn" title="Pausar música" aria-label="Pausar o reproducir música">♫</button>
+  <audio id="bgMusic" preload="metadata" loop>
+    <source src="./assets/musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="./script.js"></script>
+</body>
+</html>
